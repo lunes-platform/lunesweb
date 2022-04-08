@@ -58,10 +58,10 @@
 //!         - b58_to_vec `String` -> `Vec<u8>`
 //!
 
-/// Functions for wallets for Lunes Blockchain
-pub mod wallet;
 /// Utils functions
 pub mod utils;
+/// Functions for wallets for Lunes Blockchain
+pub mod wallet;
 
 #[cfg(feature = "wee_alloc")]
 #[global_allocator]
