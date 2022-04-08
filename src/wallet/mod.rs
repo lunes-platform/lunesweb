@@ -74,3 +74,80 @@ impl Wallet {
         self.address.clone()
     }
 }
+
+
+
+
+// TODO translate typescript code below to Rust Robson
+// export const cryptoUtils = {
+//     fromExistingSeed: (
+//         seed: string,
+//         nonce: number,
+//         chain: WalletTypes.Chain
+//     ): IAccount => {
+//         let hidden_seed = wasm.hidden_seed(nonce, seed)
+//         const privateKey = wasm.toPrivateKey(hidden_seed)
+//         const publicKey = wasm.toPublicKey(privateKey)
+//         const address = wasm.toAddress(1, chain, publicKey)
+
+//         Wallet {
+//             nonce: nonce,
+//             chain: chain,
+//             seed: seed,
+//             privateKey: wasm.arrayToBase58(privateKey),
+//             publicKey: wasm.arrayToBase58(publicKey),
+//             address: wasm.arrayToBase58(address)
+//         }
+//     },
+//     fromPrivateKey: (
+//         privateKey: string,
+//         chain: WalletTypes.Chain
+//     ): IAccount => {
+//         const publicKey = wasm.toPublicKey(wasm.base58ToArray(privateKey))
+//         const address = wasm.toAddress(1, chain, publicKey)
+
+//         return {
+//             seed: "",
+//             nonce: 0,
+//             chain: chain,
+//             privateKey: privateKey,
+//             publicKey: wasm.arrayToBase58(publicKey),
+//             address: wasm.arrayToBase58(address)
+//         }
+//     },
+//     fromPublicKey: (publicKey: string, chain: WalletTypes.Chain): IAccount => {
+//         const address = wasm.toAddress(1, chain, wasm.base58ToArray(publicKey))
+
+//         return {
+//             seed: "",
+//             nonce: 0,
+//             privateKey: "",
+//             chain: chain,
+//             publicKey: publicKey,
+//             address: wasm.arrayToBase58(address)
+//         }
+//     },
+//     fromAddress: (address: string, chain: WalletTypes.Chain): IAccount => {
+//         return {
+//             seed: "",
+//             nonce: 0,
+//             privateKey: "",
+//             publicKey: "",
+//             chain: chain,
+//             address: address
+//         }
+//     },
+//     fromNewSeed: (
+//         nWords: number,
+//         nonce: number,
+//         chain: WalletTypes.Chain
+//     ): IAccount => {
+//         let seed = []
+//         nWords = nWords != undefined ? Math.round(nWords / 3) : 4
+//         for (let i = 0; i < nWords; i++) {
+//             for (let n in wasm.randomTripleNumber()) {
+//                 seed.push(walletConstants.wordsList[n])
+//             }
+//         }
+//         return cryptoUtils.fromExistingSeed(seed.join(" "), nonce, chain)
+//     }
