@@ -22,16 +22,16 @@ why was it modified?
 ```
 ### **Types**
 
-- **fixed** Fix a bug
-- **added** Add a new feature
-- **removed** Remove a peace of code
-- **updated** Update any thing. e.g. feature, piece, refact
+- **fix** Fix a bug
+- **add** Add a new feature
+- **remove** Remove a peace of code
+- **update** Update any thing. e.g. feature, piece, refact
 
 ### **Semantic Version**
 
-- **added** -> _Major_
-- **updated** -> _Minor_
-- **fixed** -> _Patch_
+- **deprecated** -> _Major_
+- **add** -> _Minor_
+- **fixed|update** -> _Patch_
 
 ---
 
