@@ -1,0 +1,20 @@
+name: Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  Tests:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Tests
+      run: cargo t --test main
