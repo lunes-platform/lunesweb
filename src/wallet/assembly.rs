@@ -1,5 +1,8 @@
+use std::vec;
+
 use super::crypto;
 use super::Wallet;
+use crate::utils::base58::b58_to_vec;
 use crate::utils::base58::vec_to_b58;
 use crate::utils::random::random_triple_number;
 use crate::wallet::constants::word_list;
@@ -46,23 +49,20 @@ impl Wallet {
 
         Wallet::from_seed(seed.join(" "), Some(nonce), Some(chain))
     }
+
+    #[wasm_bindgen(js_name = "fromPrivateKey")]
+    pub fn from_private_key(private_key: String, chain: Option<u8>) -> Wallet {
+        let chain = chain.unwrap_or(1);
+        let public_key = crypto::to_public_key(b58_to_vec(private_key.clone()));
+        let address = crypto::to_address(1, chain, public_key.clone());
+        Wallet {
+            seed: "".to_string(),
+            seed_len: 0,
+            nonce: 0,
+            chain: chain,
+            private_key: private_key,
+            public_key: vec_to_b58(public_key),
+            address: vec_to_b58(address),
+        }
+    }
 }
-
-// TODO translate typescript code below to Rust Robson
-
-//     fromPrivateKey: (
-//         privateKey: string,
-//         chain: WalletTypes.Chain
-//     ): IAccount => {
-//         const publicKey = wasm.toPublicKey(wasm.base58ToArray(privateKey))
-//         const address = wasm.toAddress(1, chain, publicKey)
-
-//         return {
-//             seed: "",
-//             nonce: 0,
-//             chain: chain,
-//             privateKey: privateKey,
-//             publicKey: wasm.arrayToBase58(publicKey),
-//             address: wasm.arrayToBase58(address)
-//         }
-//     },
