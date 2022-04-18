@@ -177,7 +177,7 @@ assert_eq!(true, validate_address(mainnet, addr));
 */
 #[wasm_bindgen(js_name = "validateAddress")]
 pub fn validate_address(chain_id: u8, address: Vec<u8>) -> bool {
-    use super::{ADDRESS_CHECKSUM_LENGTH, ADDRESS_LENGTH, ADDRESS_VERSION};
+    use super::constants::{ADDRESS_CHECKSUM_LENGTH, ADDRESS_LENGTH, ADDRESS_VERSION};
 
     let (address_left, checksum) = {
         let x = address.len() - ADDRESS_CHECKSUM_LENGTH as usize;

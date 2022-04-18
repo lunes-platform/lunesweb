@@ -1,7 +1,8 @@
+use super::crypto;
 use super::Wallet;
-use super::{crypto, word_list};
 use crate::utils::base58::vec_to_b58;
 use crate::utils::random::random_triple_number;
+use crate::wallet::constants::word_list;
 use wasm_bindgen::prelude::wasm_bindgen;
 
 #[wasm_bindgen]
