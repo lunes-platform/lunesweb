@@ -6,7 +6,7 @@
 [![Test](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml)
 ![npm](https://img.shields.io/npm/v/lunesweb)
 
-![docs.rs](https://img.shields.io/docsrs/lunesweb/1.9.0)
+![docs.rs](https://img.shields.io/docsrs/lunesweb/0.3.0)
 
 ![npm](https://img.shields.io/npm/dm/lunesweb)
 ![GitHub last commit](https://img.shields.io/github/last-commit/lunes-platform/lunesweb)
