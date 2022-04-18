@@ -1,10 +1,19 @@
 # LunesWeb
 
-Rust Library target WebAssembly and IoT for communication with nodes in mainnet or testnet of the lunes-blockchain network Allows the automation of sending assets, issue end reissue tokens, leasing, registry, and create new wallet.
+📦 LunesWeb is intended to communicate with Lunes Blockchain nodes for Web via WebAssembly and IoT. Allows sending tokens, creating new wallet and more.
 
-[![Build](https://github.com/lunes-platform/lunesweb/actions/workflows/build.yml/badge.svg)](https://github.com/lunes-platform/lunesweb/actions/workflows/build.yml)
-[![Test](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml/badge.svg)](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml)
-[![Release](https://img.shields.io/github/v/release/lunes-platform/lunesweb)](https://github.com/lunes-platform/lunesweb/releases)
+[![Build](https://github.com/lunes-platform/lunesweb/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunesweb/actions/workflows/build.yml)
+[![Test](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/lunes-platform/lunesweb/actions/workflows/test.yml)
+![npm](https://img.shields.io/npm/v/lunesweb)
+
+![docs.rs](https://img.shields.io/docsrs/lunesweb/1.9.0)
+
+![npm](https://img.shields.io/npm/dm/lunesweb)
+![GitHub last commit](https://img.shields.io/github/last-commit/lunes-platform/lunesweb)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/lunes-platform/lunesweb)
+
+![Crates.io](https://img.shields.io/crates/l/lunesweb)
+![Discord](https://img.shields.io/discord/958424925453058158)
 
 ## Documentation
 

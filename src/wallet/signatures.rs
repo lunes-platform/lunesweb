@@ -28,7 +28,7 @@ true == wasm.validateSignature(publicKey, message, signature)
 
 ```rust
 use lunesweb::wallet::signatures::{full_signature, validate_signature};
-use lunesweb::wallet::wallet::{to_private_key, to_public_key};
+use lunesweb::wallet::crypto::{to_private_key, to_public_key};
 
 let prvk = to_private_key(vec![1; 32]);
 let pubk = to_public_key(prvk.clone());
@@ -76,7 +76,7 @@ true == wasm.validateSignature(publicKey, message, signature)
 
 ```rust
 use lunesweb::wallet::signatures::{fast_signature, validate_signature};
-use lunesweb::wallet::wallet::{to_private_key, to_public_key};
+use lunesweb::wallet::crypto::{to_private_key, to_public_key};
 
 let prvk = to_private_key(vec![1; 32]);
 let pubk = to_public_key(prvk.clone());
@@ -121,7 +121,7 @@ true == wasm.validateSignature(publicKey, message, signature)
 
 ```rust
 use lunesweb::wallet::signatures::{fast_signature, validate_signature};
-use lunesweb::wallet::wallet::{to_private_key, to_public_key};
+use lunesweb::wallet::crypto::{to_private_key, to_public_key};
 
 let prvk = to_private_key(vec![1; 32]);
 let pubk = to_public_key(prvk.clone());
@@ -177,7 +177,7 @@ assert_eq!(true, validate_address(mainnet, addr));
 */
 #[wasm_bindgen(js_name = "validateAddress")]
 pub fn validate_address(chain_id: u8, address: Vec<u8>) -> bool {
-    use crate::wallet::{ADDRESS_CHECKSUM_LENGTH, ADDRESS_LENGTH, ADDRESS_VERSION};
+    use super::{ADDRESS_CHECKSUM_LENGTH, ADDRESS_LENGTH, ADDRESS_VERSION};
 
     let (address_left, checksum) = {
         let x = address.len() - ADDRESS_CHECKSUM_LENGTH as usize;

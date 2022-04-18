@@ -1,0 +1,7 @@
+{
+	"name": "Rust",
+	"dockerFile": "./Dockerfile",
+	"extensions": [
+	],
+	"postStartCommand": "cargo install wasm-pack"
+}

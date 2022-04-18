@@ -4,7 +4,7 @@ pub mod base58;
 pub mod crypto;
 /// Functions for get vetor of random numbers
 pub mod random;
-/// Functions for serialize string and integers
+/// Functions for wserialize string and integers
 pub mod serialize;
 /// Functions for convert vectors between u32 and u8
 pub mod vectors;

@@ -60,7 +60,7 @@
 
 /// Utils functions
 pub mod utils;
-/// Functions for wallets for Lunes Blockchain
+/// Functions for generate wallets of Lunes Blockchain
 pub mod wallet;
 
 #[cfg(feature = "wee_alloc")]
