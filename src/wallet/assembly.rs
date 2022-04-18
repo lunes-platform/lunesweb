@@ -1,12 +1,11 @@
 use std::vec;
 
-use super::crypto;
 use super::Wallet;
-use crate::utils::base58::b58_to_vec;
-use crate::utils::base58::vec_to_b58;
-use crate::utils::random::random_triple_number;
 use crate::wallet::constants::word_list;
 use wasm_bindgen::prelude::wasm_bindgen;
+use lunesrs::wallet::assembly::{hidden_seed, to_private_key, to_public_key, to_address};
+use lunesrs::utils::base58::{b58_to_vec, vec_to_b58};
+use lunesrs::utils::random::random_triple_number;
 
 #[wasm_bindgen]
 impl Wallet {
@@ -15,10 +14,10 @@ impl Wallet {
         let seed_len: u8 = seed.split(" ").collect::<Vec<&str>>().len() as u8;
         let nonce = nonce.unwrap_or(0);
         let chain = chain.unwrap_or(1);
-        let seed_vec = crypto::hidden_seed(nonce, seed.clone());
-        let private_key = crypto::to_private_key(seed_vec.clone());
-        let public_key = crypto::to_public_key(private_key.clone());
-        let address = crypto::to_address(1, chain, public_key.clone());
+        let seed_vec = hidden_seed(nonce, seed.clone());
+        let private_key = to_private_key(seed_vec.clone());
+        let public_key = to_public_key(private_key.clone());
+        let address = to_address(1, chain, public_key.clone());
 
         Wallet {
             seed,
@@ -53,8 +52,8 @@ impl Wallet {
     #[wasm_bindgen(js_name = "fromPrivateKey")]
     pub fn from_private_key(private_key: String, chain: Option<u8>) -> Wallet {
         let chain = chain.unwrap_or(1);
-        let public_key = crypto::to_public_key(b58_to_vec(private_key.clone()));
-        let address = crypto::to_address(1, chain, public_key.clone());
+        let public_key = to_public_key(b58_to_vec(private_key.clone()));
+        let address = to_address(1, chain, public_key.clone());
         Wallet {
             seed: "".to_string(),
             seed_len: 0,

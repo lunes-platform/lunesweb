@@ -1,10 +1,5 @@
 use wasm_bindgen::prelude::wasm_bindgen;
 
-/// Generate private, public and address keys
-pub mod crypto;
-/// Sign and validate signatures
-pub mod signatures;
-
 pub mod assembly;
 
 pub mod constants;
